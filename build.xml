@@ -1,0 +1,41 @@
+<project name="Newsgroups" default="run">
+
+<target name="clean">
+	<delete defaultexcludes="no">
+	<fileset dir="." includes="**/*.class"/>
+	</delete>
+	<delete dir="META-INF/"/>
+	<delete dir="newsgroups/"/>
+	<delete dir="." includes="**/*.zip" />
+</target>
+
+<target name="getInput">
+	<get dest="." src="http://s3.amazonaws.com/depasquale/datasets/newsgroups.zip"/>
+	<unzip dest="." src="newsgroups.zip"/>
+</target>
+	
+<target name="run" depends="compile,jar, who, getInput">
+	<java classname="edu.tcnj.kollns1.Driver" fork="yes" classpath="." >
+	<jvmarg value="-Xmx3G"/>
+	</java>
+</target>
+
+<target name="compile" depends="clean">
+	<javac  srcdir=".">
+	<include name="**/*.java"/>
+	</javac>
+</target>
+
+<target name="jar" depends="compile">
+	<jar includes="build.xml,*.java,javafoundations/*.java,javafoundations/exceptions/*.java" basedir="." jarfile="project2.jar">
+		<manifest>
+			<attribute name="Built-By" value="Steven Kolln"/>
+		</manifest>
+	</jar>
+</target>
+
+<target name="who">
+	<echo message="Steven Kolln CSC 230 02"/>
+</target>
+
+</project>
