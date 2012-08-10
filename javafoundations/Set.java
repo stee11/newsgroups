@@ -1,7 +1,4 @@
 /**Steven Kolln
-Project 2
-3/30/2012
-CSC 230 02
 Interface Set*/
 package javafoundations;
 import javafoundations.exceptions.*;

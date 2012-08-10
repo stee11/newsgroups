@@ -1,7 +1,4 @@
 /**Steven Kolln
-Project 2
-4/1/2012
-CSC 230 02
 Driver*/
 package edu.tcnj.kollns1;
 public class Driver

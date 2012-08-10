@@ -1,7 +1,4 @@
 /**Steven Kolln
-Project 2
-4/1/2012
-CSC 230 02
 Processor*/
 package edu.tcnj.kollns1;
 import javafoundations.exceptions.*;
